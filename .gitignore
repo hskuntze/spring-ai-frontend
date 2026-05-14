@@ -1,5 +1,7 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
+/src/config.ts
+
 # dependencies
 /node_modules
 /.pnp
@@ -10,6 +12,7 @@
 
 # production
 /build
+/build.zip
 
 # misc
 .DS_Store
@@ -17,6 +20,8 @@
 .env.development.local
 .env.test.local
 .env.production.local
+.env.prod
+.env.dev
 
 npm-debug.log*
 yarn-debug.log*

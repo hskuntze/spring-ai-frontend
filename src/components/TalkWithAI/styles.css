@@ -1,0 +1,29 @@
+.prompt-input, .image-input {
+  min-height: 60px;
+  margin: 10px 0;
+  padding: 8px;
+  border: 1px solid #ccc; /* Adicionando borda para melhor visualização */
+  border-radius: 4px; /* Cantos arredondados */
+}
+
+.chat-output {
+  max-width: 100vw;
+  width: 100%;
+  margin-top: 10px;
+  padding: 10px;
+  border: 1px solid #ccc; /* Borda ao redor */
+  border-radius: 4px; /* Cantos arredondados */
+  background-color: #e0dae9;
+  overflow-x: auto; /* Permitir rolagem horizontal se necessário */
+}
+
+.chat-output pre {
+  white-space: pre-wrap; /* Preserve quebras de linha e espaços */
+  word-wrap: break-word; /* Quebra palavras longas */
+  font-family: monospace; /* Fonte monoespaçada para melhor visualização */
+  padding: 10px; /* Espaçamento interno */
+  background-color: #f8f8f8; /* Fundo claro para destacar */
+  border: 1px solid #ccc; /* Borda ao redor */
+  border-radius: 4px; /* Cantos arredondados */
+  margin: 0; /* Remover margem padrão */
+}

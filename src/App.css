@@ -1,38 +1,192 @@
-.App {
-  text-align: center;
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css");
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+* {
+  font-family: "Manrope", sans-serif;
+  font-optical-sizing: auto;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* --- TEMA --- */
+:root {
+  /* BRAND */
+  --color-primary: #ff4400;
+  --color-primary-hover: #ff4200ee;
+  --color-primary-shadow: #ff440040;
+
+  /* TEXT */
+  --color-text: #181210;
+  --color-text-strong: #334155;
+  --color-text-muted: #8d6a5e;
+  --color-text-disabled: #555;
+
+  /* BACKGROUND */
+  --color-background: #f8f6f5;
+  --color-surface: #ffffff;
+  --color-input-surface: #fcfaf9;
+
+  /* BORDERS */
+  --color-border: #e7deda;
+  --color-border-light: #e2e8f0;
+
+  /* STATES */
+  --color-info: #8d6a5e;
+  --color-info-shadow: #8d6a5e40;
+
+  --color-disabled-bg-dark: #555;
+  --color-disabled-bg-light: #f8fafc;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
+#root {
   min-height: 100vh;
+
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  grid-template-columns: 100%;
+}
+
+#main {
+  width: 100%;
+  min-height: max-content;
+}
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--color-background);
+  color: var(--color-text);
+  transition:
+    background-color 0.3s,
+    color 0.3s;
+}
+
+a,
+a:hover {
+  text-decoration: none;
+  color: unset;
+}
+
+button {
+  border: unset;
+  background-color: unset;
+  color: unset;
+  margin: unset;
+  padding: unset;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+  opacity: 1;
+  cursor: pointer;
+  width: 20px;
+  height: 20px;
+}
+
+input[type="color"] {
+  -webkit-appearance: none;
+  appearance: none;
+
+  border: none;
+  padding: 0;
+  background: none;
+
+  width: 42px;
+  height: 42px;
+
+  cursor: pointer;
+}
+
+input[type="color"]::-webkit-color-swatch-wrapper {
+  padding: 0;
+}
+
+input[type="color"]::-webkit-color-swatch {
+  border: none;
+  border-radius: 8px;
+}
+
+input,
+textarea,
+select {
+  transition:
+    border 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+  outline: none;
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 1px var(--color-primary);
+}
+
+html[data-theme="dark"] input[type="date"]::-webkit-calendar-picker-indicator {
+  filter: invert(1);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+span {
+  margin: 0;
+  padding: 0;
+}
+
+select,
+input {
+  margin: 0;
+  padding-block: 0;
+  padding-inline: 0;
+  box-sizing: unset; /* Fundamental para obedecer os tamanhos definidos pelo dev. */
+}
+
+.App {
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  align-items: start;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+
+  height: 100vh;
+  width: 100vw;
 }
 
-.App-link {
-  color: #61dafb;
+.App button {
+  background-color: #ccc;
+  padding: 8px 12px;
+  color: #333;
+  border: 1px solid #b9b9b9;
+
+  transition: all 0.4s ease-in-out;
+
+  cursor: pointer;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.App button.active {
+  background-color: #0b95e6;
+  color: #fff;
+  border-color: #0066a1;
+}
+
+.App button:hover {
+  background-color: #b9b9b9;
+}
+
+.content {
+  margin: 10px auto;
+}
+
+.active-tab {
+  width: 100%;
+  height: 100%;
+
+  margin-top: 40px;
 }

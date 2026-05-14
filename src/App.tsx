@@ -1,24 +1,27 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { useState } from "react";
+import "./App.css";
+import TalkWithAI from "./components/TalkWithAI";
+import ImageGenerator from "./components/ImageGenerator";
+import RecipeGenerator from "./components/RecipeGenerator";
 
 function App() {
+  const [activeTab, setActiveTab] = useState<"talk" | "recipes" | "images">();
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div className="content">
+        <button className={activeTab === "talk" ? "active" : ""} onClick={() => setActiveTab("talk")}>
+          Talk with AI
+        </button>
+        <button className={activeTab === "recipes" ? "active" : ""} onClick={() => setActiveTab("recipes")}>
+          Generate Recipes
+        </button>
+        <button className={activeTab === "images" ? "active" : ""} onClick={() => setActiveTab("images")}>
+          Generate Images
+        </button>
+
+        <div className="active-tab">{activeTab === "talk" ? <TalkWithAI /> : activeTab === "images" ? <ImageGenerator /> : <RecipeGenerator />}</div>
+      </div>
     </div>
   );
 }
